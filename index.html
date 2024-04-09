@@ -60,13 +60,14 @@
 
           createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
             .then((userCredential) => {
-              console.log(userCredential);
+              console.log("회원가입 성공!");
               // Signed in
 
               const user = userCredential.user;
               // ...
             })
             .catch((error) => {
+              console.log("회원가입 실패!");
               const errorCode = error.code;
               const errorMessage = error.message;
               // ..
@@ -83,11 +84,13 @@
           signInWithEmailAndPassword(auth, signInEmail, signInPassword)
             .then((userCredential) => {
               // Signed in
+              console.log("로그인 성공!");
               console.log(userCredential);
               const user = userCredential.user;
               // ...
             })
             .catch((error) => {
+              console.log("로그인 실패!");
               const errorCode = error.code;
               const errorMessage = error.message;
             });
